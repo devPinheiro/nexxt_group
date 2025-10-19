@@ -74,7 +74,7 @@ export function AboutPage() {
       <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-800">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzU5NDgxODc3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="https://unsplash.com/photos/a-group-of-hands-holding-each-other-Q6KzWe-lq9Y"
             alt="African business professional"
             className="w-full h-full object-cover opacity-30"
           />
