@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Building2, TrendingUp, Globe, Shield, Users, Briefcase, LineChart, Target } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SimpleSEO } from './SEO/SimpleSEO';
 import { getPageConfig } from './SEO';
 
