@@ -13,9 +13,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'subsidiaries', label: 'Subsidiaries' },
+    // { id: 'subsidiaries', label: 'Subsidiaries' },
     { id: 'services', label: 'Services' },
-    { id: 'careers', label: 'Careers' },
+    // { id: 'careers', label: 'Careers' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -30,14 +30,16 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <motion.button
+          <motion.div
             onClick={() => handleNavigate('home')}
-            className="text-2xl tracking-tight text-black hover:text-gray-700 transition-colors"
+            className="text-2xl tracking-tight text-black hover:text-gray-700 transition-colors flex items-center gap-1"
             style={{ fontFamily: 'var(--font-serif)' }}
             whileHover={{ scale: 1.02 }}
           >
-            APEX GLOBAL
-          </motion.button>
+            <img src="/images/logo.png" className="w-12" alt="logo" />
+            <div className="font-[800] text-sm mr-2"><b>NEXXT</b></div>{' '}
+            <div className="font-normal text-sm "><b>GROUP</b></div>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">

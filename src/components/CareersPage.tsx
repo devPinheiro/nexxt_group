@@ -3,8 +3,11 @@ import { Briefcase, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { SimpleSEO } from './SEO/SimpleSEO';
+import { getPageConfig } from './SEO';
 
 export function CareersPage() {
+  const careersConfig = getPageConfig('careers');
   const jobs = [
     {
       title: 'Senior Investment Manager',
@@ -85,7 +88,15 @@ export function CareersPage() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SimpleSEO
+        title={careersConfig.title}
+        description={careersConfig.description}
+        keywords={careersConfig.keywords}
+        type="website"
+        path="/careers"
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-800">
@@ -302,6 +313,7 @@ export function CareersPage() {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

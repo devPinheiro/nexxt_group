@@ -7,6 +7,7 @@ import { SubsidiariesPage } from './components/SubsidiariesPage';
 import { ServicesPage } from './components/ServicesPage';
 import { CareersPage } from './components/CareersPage';
 import { ContactPage } from './components/ContactPage';
+import { SEOProvider } from './components/SEO/SEOProvider';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -31,12 +32,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
-      <main className="flex-1">
-        {renderPage()}
-      </main>
-      <Footer />
-    </div>
+    <SEOProvider>
+      <div className="min-h-screen flex flex-col">
+        <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
+        <main className="flex-1">
+          {renderPage()}
+        </main>
+        <Footer />
+      </div>
+    </SEOProvider>
   );
 }

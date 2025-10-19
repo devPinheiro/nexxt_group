@@ -2,8 +2,11 @@ import { motion } from 'motion/react';
 import { Award, Users, Target, Heart } from 'lucide-react';
 import { Card } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { SimpleSEO } from './SEO/SimpleSEO';
+import { getPageConfig } from './SEO';
 
 export function AboutPage() {
+  const aboutConfig = getPageConfig('about');
   const leadership = [
     {
       name: 'James Morrison',
@@ -58,9 +61,24 @@ export function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SimpleSEO
+        title={aboutConfig.title}
+        description={aboutConfig.description}
+        keywords={aboutConfig.keywords}
+        type="website"
+        path="/about"
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-800">
+          <ImageWithFallback
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzU5NDgxODc3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            alt="African business professional"
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
         <div className="relative z-10 text-center px-6 max-w-4xl">
           <motion.h1
             className="text-5xl md:text-6xl mb-6"
@@ -69,7 +87,7 @@ export function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Our Story
+            The Nexxt Story
           </motion.h1>
           <motion.p
             className="text-xl text-gray-300"
@@ -77,7 +95,7 @@ export function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Building a legacy of excellence across generations and borders
+            Two decades of accelerating global business across diverse industries
           </motion.p>
         </div>
       </section>
@@ -90,10 +108,10 @@ export function AboutPage() {
               Our Mission
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-6">
-              To create sustainable value for our stakeholders by leveraging our diverse portfolio of world-class businesses, fostering innovation, and maintaining the highest standards of corporate governance.
+              To accelerate global business growth through our diverse portfolio spanning Automobile, Fashion, Real Estate, and Manufacturing, while maintaining the highest standards of excellence and innovation.
             </p>
             <p className="text-lg text-gray-500">
-              We are committed to making a positive impact on the communities we serve while delivering exceptional returns to our shareholders.
+              We are committed to being the trusted partner for businesses worldwide, delivering mature solutions and sustainable growth across all sectors.
             </p>
           </motion.div>
         </div>
@@ -112,34 +130,34 @@ export function AboutPage() {
           <div className="space-y-12">
             {[
               {
-                year: '1947',
+                year: '2005',
                 title: 'The Foundation',
-                description: 'Apex Global was founded in New York City with a vision to build a diversified conglomerate that would stand the test of time.',
+                description: 'Nexxt Group was founded with a vision to accelerate global business growth across diverse industries with mature, trusted solutions.',
               },
               {
-                year: '1965',
-                title: 'First Expansion',
-                description: 'Acquired our first subsidiary in the financial services sector, marking the beginning of our diversification strategy.',
+                year: '2008',
+                title: 'Automobile Division',
+                description: 'Launched Nexxt Automobile, establishing our premium automotive solutions and vehicle distribution services.',
               },
               {
-                year: '1975',
-                title: 'Going Global',
-                description: 'Established our first European offices in London and Frankfurt, expanding our international footprint.',
+                year: '2012',
+                title: 'Fashion & Real Estate',
+                description: 'Expanded into fashion retail and real estate development, diversifying our portfolio across lifestyle and property sectors.',
               },
               {
-                year: '1990',
-                title: 'Digital Transformation',
-                description: 'Launched Apex Technologies to lead our digital innovation initiatives across all subsidiaries.',
+                year: '2016',
+                title: 'Manufacturing Excellence',
+                description: 'Established Nexxt Manufacturing, bringing advanced industrial production capabilities to our growing portfolio.',
               },
               {
-                year: '2010',
-                title: 'Sustainable Future',
-                description: 'Committed to sustainability with the creation of Apex Energy, focusing on renewable energy solutions.',
+                year: '2020',
+                title: 'Global Acceleration',
+                description: 'Accelerated international expansion with comprehensive import/export operations and customer goods distribution.',
               },
               {
                 year: '2025',
-                title: 'Global Leadership',
-                description: 'Operating in 50+ countries with a diverse portfolio spanning finance, technology, energy, and real estate.',
+                title: 'Industry Leadership',
+                description: 'Leading global business acceleration across Automobile, Fashion, Real Estate, and Manufacturing in 50+ countries.',
               },
             ].map((milestone, index) => (
               <motion.div
@@ -169,7 +187,7 @@ export function AboutPage() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-24 bg-black text-white">
+      {/* <section className="py-24 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
@@ -208,7 +226,7 @@ export function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Values Section */}
       <section className="py-24 bg-white">
@@ -267,6 +285,7 @@ export function AboutPage() {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

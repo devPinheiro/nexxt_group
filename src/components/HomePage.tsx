@@ -5,55 +5,58 @@ import { Card } from './ui/card';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { SimpleSEO } from './SEO/SimpleSEO';
+import { getPageConfig } from './SEO';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
+  const homeConfig = getPageConfig('home');
   const subsidiaries = [
     {
-      name: 'Apex Financial',
-      description: 'Global investment and asset management solutions',
-      industry: 'Finance',
+      name: 'Nexxt Automobile',
+      description: 'Premium automotive solutions and vehicle distribution services',
+      industry: 'Automobile',
     },
     {
-      name: 'Apex Technologies',
-      description: 'Enterprise software and digital transformation',
-      industry: 'Technology',
+      name: 'Nexxt Fashion',
+      description: 'High-end fashion retail and lifestyle brands worldwide',
+      industry: 'Fashion',
     },
     {
-      name: 'Apex Energy',
-      description: 'Sustainable energy infrastructure worldwide',
-      industry: 'Energy',
-    },
-    {
-      name: 'Apex Real Estate',
-      description: 'Commercial and residential property development',
+      name: 'Nexxt Real Estate',
+      description: 'Commercial and residential property development and investment',
       industry: 'Real Estate',
+    },
+    {
+      name: 'Nexxt Manufacturing',
+      description: 'Advanced manufacturing and industrial production facilities',
+      industry: 'Manufacturing',
     },
   ];
 
   const services = [
     {
       icon: Building2,
-      title: 'Corporate Strategy',
-      description: 'Strategic planning and business development across global markets',
+      title: 'Automobile Dealership',
+      description: 'Premium vehicle sales and automotive service solutions',
     },
     {
       icon: TrendingUp,
-      title: 'Investment Management',
-      description: 'Portfolio optimization and institutional investment services',
+      title: 'Real Estate',
+      description: 'Property development and real estate investment services',
     },
     {
       icon: Globe,
-      title: 'Global Operations',
-      description: 'International expansion and operational excellence',
+      title: 'Customer Goods',
+      description: 'High-quality consumer products and retail solutions',
     },
     {
       icon: Shield,
-      title: 'Risk & Compliance',
-      description: 'Regulatory compliance and enterprise risk management',
+      title: 'Import/Export',
+      description: 'Global trade facilitation and international commerce',
     },
   ];
 
@@ -71,13 +74,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
   };
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SimpleSEO
+        title={homeConfig.title}
+        description={homeConfig.description}
+        keywords={homeConfig.keywords}
+        type="website"
+        path="/"
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-800">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1703014172880-a9ad043097c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NTk0NTc5Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Modern architecture"
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjBsZWFkZXJ8ZW58MXx8fHwxNzU5NDgxODc3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            alt="African business leader"
             className="w-full h-full object-cover opacity-30"
           />
         </div>
@@ -90,7 +101,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Building Global Excellence
+            Global Business Accelerator. Trusted Excellence.
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl mb-8 text-gray-300"
@@ -98,7 +109,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Pioneering industries worldwide with integrity and innovation since 1947
+            Two decades of proven leadership across diverse industries worldwide
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -107,9 +118,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
           >
             <Button
               onClick={() => onNavigate('about')}
-              className="bg-white text-black hover:bg-gray-100 px-8 py-6 group"
+              className="bg-white text-black hover:bg-gray-100 px-20 py-10 group mt-12" 
+              size="lg"
             >
-              Discover Our Legacy
+              Explore Nexxt Group
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </Button>
           </motion.div>
@@ -152,7 +164,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          {/* <div className="text-center mt-12">
             <Button
               onClick={() => onNavigate('subsidiaries')}
               variant="outline"
@@ -160,7 +172,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             >
               View All Subsidiaries
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -244,7 +256,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Legacy Section */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -298,7 +310,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
@@ -348,6 +360,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

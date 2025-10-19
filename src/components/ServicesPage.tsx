@@ -2,51 +2,54 @@ import { motion } from 'motion/react';
 import { Building2, TrendingUp, Globe, Shield, Users, Briefcase, LineChart, Target } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
+import { SimpleSEO } from './SEO/SimpleSEO';
+import { getPageConfig } from './SEO';
 
 export function ServicesPage() {
+  const servicesConfig = getPageConfig('services');
   const services = [
     {
       icon: Building2,
-      title: 'Corporate Strategy',
-      description: 'Strategic planning and business development tailored to your organization\'s unique goals and market position.',
+      title: 'Automobile Dealership',
+      description: 'Premium vehicle sales and automotive service solutions with comprehensive dealership support.',
       features: [
-        'Market Analysis & Research',
-        'Business Model Innovation',
-        'Strategic Roadmap Development',
-        'Competitive Intelligence',
+        'Vehicle Sales & Distribution',
+        'Service & Maintenance',
+        'Parts & Accessories',
+        'Customer Support',
       ],
     },
     {
       icon: TrendingUp,
-      title: 'Investment Management',
-      description: 'Comprehensive portfolio optimization and institutional investment services backed by decades of expertise.',
+      title: 'Real Estate',
+      description: 'Property development and real estate investment services with comprehensive market expertise.',
       features: [
-        'Asset Allocation Strategy',
-        'Portfolio Management',
-        'Risk Assessment',
-        'Performance Analytics',
+        'Property Development',
+        'Investment Advisory',
+        'Asset Management',
+        'Market Analysis',
       ],
     },
     {
       icon: Globe,
-      title: 'Global Operations',
-      description: 'International expansion support and operational excellence frameworks for sustainable growth.',
+      title: 'Customer Goods',
+      description: 'High-quality consumer products and retail solutions across diverse market segments.',
       features: [
-        'Market Entry Strategy',
-        'Supply Chain Optimization',
-        'Process Improvement',
-        'Global Compliance',
+        'Product Development',
+        'Retail Distribution',
+        'Brand Management',
+        'Quality Assurance',
       ],
     },
     {
       icon: Shield,
-      title: 'Risk & Compliance',
-      description: 'Enterprise risk management and regulatory compliance solutions to protect your organization.',
+      title: 'Import/Export',
+      description: 'Global trade facilitation and international commerce solutions with comprehensive logistics support.',
       features: [
-        'Risk Assessment',
+        'Trade Documentation',
+        'Customs Clearance',
+        'Logistics Management',
         'Regulatory Compliance',
-        'Internal Controls',
-        'Audit Support',
       ],
     },
     {
@@ -103,9 +106,24 @@ export function ServicesPage() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SimpleSEO
+        title={servicesConfig.title}
+        description={servicesConfig.description}
+        keywords={servicesConfig.keywords}
+        type="website"
+        path="/services"
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-800">
+          <ImageWithFallback
+            src="https://images.unsplash.com/photo-1556157382-97eda2d62296?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjB0ZWFtfGVufDF8fHx8MTc1OTQ4MTg3N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            alt="African business team"
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
         <div className="relative z-10 text-center px-6 max-w-4xl">
           <motion.h1
             className="text-5xl md:text-6xl mb-6"
@@ -277,7 +295,7 @@ export function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 to-black text-white">
+      <section className="py-24 bg-white text-black">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div {...fadeInUp}>
             <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-serif)' }}>
@@ -286,17 +304,18 @@ export function ServicesPage() {
             <p className="text-xl text-gray-300 mb-8">
               Partner with us to transform your business and unlock new opportunities for growth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-white text-black hover:bg-gray-100 px-8 py-6">
                 Schedule a Consultation
               </Button>
               <Button variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6">
                 Download Brochure
               </Button>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

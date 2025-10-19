@@ -9,10 +9,10 @@ export function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <h3 className="text-2xl mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
-              APEX GLOBAL
+              NEXXT GROUP
             </h3>
             <p className="text-gray-400 mb-6 max-w-md">
-              A legacy of excellence across industries. Building tomorrow's solutions with timeless values.
+              Global Business Accelerator. Trusted Excellence across Automobile, Fashion, Real Estate, and Manufacturing.
             </p>
             <div className="flex gap-4">
               {[
@@ -56,7 +56,7 @@ export function Footer() {
               Contact
             </h4>
             <ul className="space-y-2 text-gray-400">
-              <li>info@apexglobal.com</li>
+              <li>info@nexxtgroup.com</li>
               <li>+1 (555) 123-4567</li>
               <li>New York, NY</li>
             </ul>
@@ -64,7 +64,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-gray-800 text-center text-gray-500">
-          <p>&copy; 2025 Apex Global Corporation. All rights reserved.</p>
+          <p>&copy; 2025 Nexxt Group Corporation. All rights reserved.</p>
         </div>
       </div>
     </footer>

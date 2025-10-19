@@ -3,47 +3,50 @@ import { Building2, DollarSign, Zap, Home, Filter } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { useState } from 'react';
+import { SimpleSEO } from './SEO/SimpleSEO';
+import { getPageConfig } from './SEO';
 
 export function SubsidiariesPage() {
   const [selectedFilter, setSelectedFilter] = useState('all');
+  const subsidiariesConfig = getPageConfig('subsidiaries');
 
   const subsidiaries = [
     {
-      name: 'Apex Financial',
-      logo: DollarSign,
-      industry: 'Finance',
-      description: 'Leading global investment and asset management firm with over $500B in assets under management.',
-      established: '1965',
-      headquarters: 'New York, USA',
+      name: 'Nexxt Automobile',
+      logo: Building2,
+      industry: 'Automobile',
+      description: 'Premium automotive solutions and vehicle distribution services with global dealership network.',
+      established: '2008',
+      headquarters: 'Detroit, USA',
       employees: '12,000+',
       regions: ['North America', 'Europe', 'Asia'],
     },
     {
-      name: 'Apex Technologies',
-      logo: Building2,
-      industry: 'Technology',
-      description: 'Enterprise software solutions and digital transformation services for Fortune 500 companies.',
-      established: '1990',
-      headquarters: 'San Francisco, USA',
+      name: 'Nexxt Fashion',
+      logo: DollarSign,
+      industry: 'Fashion',
+      description: 'High-end fashion retail and lifestyle brands with premium boutiques worldwide.',
+      established: '2012',
+      headquarters: 'Milan, Italy',
       employees: '8,500+',
       regions: ['Global'],
     },
     {
-      name: 'Apex Energy',
+      name: 'Nexxt Manufacturing',
       logo: Zap,
-      industry: 'Energy',
-      description: 'Sustainable energy infrastructure and renewable power generation across multiple continents.',
-      established: '2010',
-      headquarters: 'London, UK',
+      industry: 'Manufacturing',
+      description: 'Advanced manufacturing and industrial production facilities serving global markets.',
+      established: '2016',
+      headquarters: 'Shanghai, China',
       employees: '15,000+',
-      regions: ['Europe', 'Asia Pacific', 'Middle East'],
+      regions: ['Asia Pacific', 'Europe', 'Americas'],
     },
     {
-      name: 'Apex Real Estate',
+      name: 'Nexxt Real Estate',
       logo: Home,
       industry: 'Real Estate',
-      description: 'Commercial and residential property development with a portfolio exceeding $50B in value.',
-      established: '1985',
+      description: 'Commercial and residential property development and investment with global portfolio.',
+      established: '2012',
       headquarters: 'Dubai, UAE',
       employees: '6,000+',
       regions: ['Middle East', 'Asia', 'Europe'],
@@ -84,7 +87,15 @@ export function SubsidiariesPage() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SimpleSEO
+        title={subsidiariesConfig.title}
+        description={subsidiariesConfig.description}
+        keywords={subsidiariesConfig.keywords}
+        type="website"
+        path="/subsidiaries"
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
         <div className="relative z-10 text-center px-6 max-w-4xl">
@@ -256,6 +267,7 @@ export function SubsidiariesPage() {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
