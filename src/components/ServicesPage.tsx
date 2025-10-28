@@ -120,7 +120,8 @@ export function ServicesPage() {
       <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-800">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1556157382-97eda2d62296?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjB0ZWFtfGVufDF8fHx8MTc1OTQ4MTg3N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+             src="https://images.unsplash.com/photo-1703014172880-a9ad043097c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NTk0NTc5Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            alt="Modern architecture"
             alt="African business team"
             className="w-full h-full object-cover opacity-30"
           />

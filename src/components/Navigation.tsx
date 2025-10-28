@@ -36,9 +36,8 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             style={{ fontFamily: 'var(--font-serif)' }}
             whileHover={{ scale: 1.02 }}
           >
-            <img src="/images/logo.png" className="w-12" alt="logo" />
-            <div className="font-[800] text-sm mr-2"><b>NEXXT</b></div>{' '}
-            <div className="font-normal text-sm "><b>GROUP</b></div>
+            <img src="/images/logo.svg" className="w-24" alt="logo" />
+          
           </motion.div>
 
           {/* Desktop Navigation */}

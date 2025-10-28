@@ -8,9 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
-              NEXXT GROUP
-            </h3>
+            <img src="/images/logo-white.svg" className="w-24 pb-2" alt="logo" />
             <p className="text-gray-400 mb-6 max-w-md">
               Global Business Accelerator. Trusted Excellence across Automobile, Fashion, Real Estate, and Manufacturing.
             </p>
