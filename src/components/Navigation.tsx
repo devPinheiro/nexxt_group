@@ -26,18 +26,16 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50  backdrop-blur-lg  border-gray-800">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
             onClick={() => handleNavigate('home')}
-            className="text-2xl tracking-tight text-black hover:text-gray-700 transition-colors flex items-center gap-1"
-            style={{ fontFamily: 'var(--font-serif)' }}
+            className="flex items-center gap-1 cursor-pointer"
             whileHover={{ scale: 1.02 }}
           >
-            <img src="/images/logo.svg" className="w-24" alt="logo" />
-          
+            <img src="/images/logo-white.svg" className="w-24" alt="Nexxt Group logo" />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -47,7 +45,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 key={item.id}
                 onClick={() => handleNavigate(item.id)}
                 className={`relative px-2 py-1 transition-colors ${
-                  currentPage === item.id ? 'text-black' : 'text-gray-600 hover:text-black'
+                  currentPage === item.id ? 'text-white' : ' hover:text-gray-400 text-white'
                 }`}
                 whileHover={{ scale: 1.05 }}
               >
@@ -55,7 +53,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 {currentPage === item.id && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"
                     initial={false}
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
@@ -66,7 +64,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-black"
+            className="md:hidden text-gray-300"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -89,8 +87,8 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                     onClick={() => handleNavigate(item.id)}
                     className={`text-left px-4 py-3 rounded transition-colors ${
                       currentPage === item.id
-                        ? 'bg-gray-100 text-black'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-black'
+                        ? 'bg-gray-800 text-amber-400'
+                        : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                     }`}
                   >
                     {item.label}

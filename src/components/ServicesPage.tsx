@@ -1,110 +1,70 @@
 import { motion } from 'motion/react';
-import { Building2, TrendingUp, Globe, Shield, Users, Briefcase, LineChart, Target } from 'lucide-react';
+import { Globe, Car, Shirt, Home, ShoppingCart, UtensilsCrossed, ArrowRight } from 'lucide-react';
 import { Card } from './ui/card';
-import { Button } from './ui/button';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SimpleSEO } from './SEO/SimpleSEO';
 import { getPageConfig } from './SEO';
 
+const DIVISIONS = [
+  {
+    icon: Globe,
+    title: 'Global Services',
+    description: 'End-to-end business consulting and international trade solutions that bridge markets and accelerate growth.',
+    features: ['Business consulting', 'Procurement & supply chain', 'Import & export', 'Corporate solutions', 'Logistics support'],
+    link: null,
+  },
+  {
+    icon: Car,
+    title: 'Automobile Dealership',
+    description: 'Premium vehicle sales, importation, and comprehensive fleet management across Nigeria and beyond.',
+    features: ['Vehicle sales', 'Vehicle importation', 'Fleet management', 'Auto financing', 'After-sales support'],
+    link: null,
+  },
+  {
+    icon: Shirt,
+    title: 'Fashion & Lifestyle',
+    description: 'Contemporary clothing, accessories, and bespoke branding solutions for individuals and businesses.',
+    features: ['Clothing and apparel', 'Fashion accessories', 'Branding and merchandising', 'Custom designs'],
+    link: null,
+  },
+  {
+    icon: Home,
+    title: 'Real Estate',
+    description: 'Property development, sales, and investment opportunities built on quality construction and smart infrastructure.',
+    features: ['Property development', 'Property sales', 'Property management', 'Construction & infrastructure', 'Real estate investment'],
+    link: null,
+  },
+  {
+    icon: ShoppingCart,
+    title: 'E-Commerce',
+    description: 'A robust online marketplace powering retail, wholesale, and cross-border digital commerce — Tradiixx.com.',
+    features: ['Online marketplace', 'Retail and wholesale', 'Digital commerce solutions', 'Cross-border trade'],
+    link: 'https://tradiixx.com',
+  },
+  {
+    icon: UtensilsCrossed,
+    title: 'Hospitality',
+    description: 'Hotels, restaurants, events, and tourism services that deliver memorable experiences with lasting impact.',
+    features: ['Hotels and accommodation', 'Restaurants', 'Event management', 'Tourism and leisure services'],
+    link: null,
+  },
+];
+
+const APPROACH = [
+  { step: '01', title: 'Discovery', description: 'Deep dive into your business challenges and objectives.' },
+  { step: '02', title: 'Strategy', description: 'Develop customised solutions aligned with your goals.' },
+  { step: '03', title: 'Execution', description: 'Implement with precision and expert project management.' },
+  { step: '04', title: 'Growth', description: 'Continuous improvement and ongoing partnership support.' },
+];
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6 },
+};
+
 export function ServicesPage() {
   const servicesConfig = getPageConfig('services');
-  const services = [
-    {
-      icon: Building2,
-      title: 'Automobile Dealership',
-      description: 'Premium vehicle sales and automotive service solutions with comprehensive dealership support.',
-      features: [
-        'Vehicle Sales & Distribution',
-        'Service & Maintenance',
-        'Parts & Accessories',
-        'Customer Support',
-      ],
-    },
-    {
-      icon: TrendingUp,
-      title: 'Real Estate',
-      description: 'Property development and real estate investment services with comprehensive market expertise.',
-      features: [
-        'Property Development',
-        'Investment Advisory',
-        'Asset Management',
-        'Market Analysis',
-      ],
-    },
-    {
-      icon: Globe,
-      title: 'Customer Goods',
-      description: 'High-quality consumer products and retail solutions across diverse market segments.',
-      features: [
-        'Product Development',
-        'Retail Distribution',
-        'Brand Management',
-        'Quality Assurance',
-      ],
-    },
-    {
-      icon: Shield,
-      title: 'Import/Export',
-      description: 'Global trade facilitation and international commerce solutions with comprehensive logistics support.',
-      features: [
-        'Trade Documentation',
-        'Customs Clearance',
-        'Logistics Management',
-        'Regulatory Compliance',
-      ],
-    },
-    {
-      icon: Users,
-      title: 'Human Capital',
-      description: 'Talent management and organizational development services to build high-performing teams.',
-      features: [
-        'Leadership Development',
-        'Talent Acquisition',
-        'Performance Management',
-        'Culture Transformation',
-      ],
-    },
-    {
-      icon: Briefcase,
-      title: 'M&A Advisory',
-      description: 'End-to-end merger and acquisition support from due diligence to post-merger integration.',
-      features: [
-        'Target Identification',
-        'Due Diligence',
-        'Deal Structuring',
-        'Integration Planning',
-      ],
-    },
-    {
-      icon: LineChart,
-      title: 'Financial Advisory',
-      description: 'Expert financial guidance for complex transactions and strategic financial planning.',
-      features: [
-        'Capital Structure Optimization',
-        'Financial Modeling',
-        'Valuation Services',
-        'Restructuring Advisory',
-      ],
-    },
-    {
-      icon: Target,
-      title: 'Digital Transformation',
-      description: 'Technology-enabled business transformation to stay competitive in the digital age.',
-      features: [
-        'Digital Strategy',
-        'Technology Implementation',
-        'Change Management',
-        'Innovation Labs',
-      ],
-    },
-  ];
-
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6 },
-  };
 
   return (
     <>
@@ -115,208 +75,167 @@ export function ServicesPage() {
         type="website"
         path="/services"
       />
-      <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-800">
-          <ImageWithFallback
-             src="https://images.unsplash.com/photo-1703014172880-a9ad043097c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NTk0NTc5Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Modern architecture"
-            alt="African business team"
-            className="w-full h-full object-cover opacity-30"
-          />
-        </div>
-        <div className="relative z-10 text-center px-6 max-w-4xl">
-          <motion.h1
-            className="text-5xl md:text-6xl mb-6"
-            style={{ fontFamily: 'var(--font-serif)' }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Our Services
-          </motion.h1>
-          <motion.p
-            className="text-xl text-gray-300"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Comprehensive solutions for complex business challenges
-          </motion.p>
-        </div>
-      </section>
+      <div className="min-h-screen">
 
-      {/* Services Overview */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+        {/* Hero */}
+        <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src="/images/hero.jpeg"
+              alt="Nexxt Group"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/75" />
+          </div>
+          <div className="relative z-10 text-center px-6 max-w-4xl">
+            <motion.p
+              className="text-gray-400 text-sm tracking-widest uppercase mb-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               What We Offer
-            </h2>
-            <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Leveraging our global expertise and industry knowledge, we deliver tailored solutions that drive sustainable growth and competitive advantage.
-            </p>
-          </motion.div>
+            </motion.p>
+            <motion.h1
+              className="text-5xl md:text-6xl text-white mb-4"
+              style={{ fontFamily: 'var(--font-serif)' }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              Our Services
+            </motion.h1>
+            <motion.p
+              className="text-xl text-gray-300"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+            >
+              Six specialised divisions delivering comprehensive solutions across key sectors
+            </motion.p>
+          </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-              >
-                <Card className="p-8 border-2 border-gray-100 hover:border-gray-300 transition-all h-full group">
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-800 transition-colors">
-                    <service.icon className="text-white" size={28} />
+        {/* Divisions Grid */}
+        <section className="py-40 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div {...fadeInUp} className="text-center mb-16">
+              <p className="text-black text-sm tracking-widest uppercase mb-3">Our Divisions</p>
+              <h2 className="text-4xl md:text-5xl text-black mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+                Business Divisions
+              </h2>
+              <div className="w-20 h-0.5 bg-neutral-600 mx-auto mb-5" />
+              <p className="text-black max-w-2xl mx-auto">
+                Leveraging expertise across six divisions to deliver tailored solutions that drive sustainable growth.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {DIVISIONS.map((division, index) => (
+                <motion.div
+                  key={division.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.07 }}
+                >
+                  <Card className="p-8 bg-neutral-900 border border-neutral-800 hover:border-neutral-600 transition-all h-full group flex flex-col">
+                    <div className="flex items-start gap-5 mb-5">
+                      <div className="w-14 h-14 bg-neutral-800 border border-neutral-700 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-neutral-700 transition-colors">
+                        <division.icon className="text-white" size={26} />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl text-white mb-1" style={{ fontFamily: 'var(--font-serif)' }}>
+                          {division.title}
+                        </h3>
+                        <p className="text-gray-400 text-sm">{division.description}</p>
+                      </div>
+                    </div>
+
+                    <div className="pt-5 border-t border-neutral-800 mt-auto">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4">
+                        {division.features.map((feature) => (
+                          <li key={feature} className="flex items-center gap-2 text-gray-400 text-sm">
+                            <div className="w-1 h-1 bg-gray-500 rounded-full shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+
+                      {division.link && (
+                        <a
+                          href={division.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-4 inline-flex items-center gap-1.5 text-white text-sm font-medium hover:text-gray-300 transition-colors"
+                        >
+                          Visit Tradiixx.com <ArrowRight size={14} />
+                        </a>
+                      )}
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Approach Section */}
+        <section className="py-24 bg-neutral-950">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div {...fadeInUp} className="text-center mb-16">
+              <p className="text-gray-400 text-sm tracking-widest uppercase mb-3">How We Work</p>
+              <h2 className="text-4xl md:text-5xl text-white mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+                Our Approach
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                A proven methodology built on collaboration, insight, and measurable results.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {APPROACH.map((phase, index) => (
+                <motion.div
+                  key={phase.step}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="text-5xl mb-4 text-white/20" style={{ fontFamily: 'var(--font-serif)' }}>
+                    {phase.step}
                   </div>
-
-                  {/* Title */}
-                  <h3 className="text-2xl mb-4 group-hover:text-gray-600 transition-colors" style={{ fontFamily: 'var(--font-serif)' }}>
-                    {service.title}
+                  <h3 className="text-xl text-white mb-3" style={{ fontFamily: 'var(--font-serif)' }}>
+                    {phase.title}
                   </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-600 mb-6">
-                    {service.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="pt-6 border-t border-gray-200">
-                    <ul className="space-y-2">
-                      {service.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2 text-gray-600">
-                          <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
+                  <p className="text-gray-400 text-sm">{phase.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Approach Section */}
-      <section className="py-24 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
-              Our Approach
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              A proven methodology built on collaboration, insight, and measurable results
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                step: '01',
-                title: 'Discovery',
-                description: 'Deep dive into your business challenges and objectives',
-              },
-              {
-                step: '02',
-                title: 'Strategy',
-                description: 'Develop customized solutions aligned with your goals',
-              },
-              {
-                step: '03',
-                title: 'Implementation',
-                description: 'Execute with precision and expert project management',
-              },
-              {
-                step: '04',
-                title: 'Optimization',
-                description: 'Continuous improvement and ongoing support',
-              },
-            ].map((phase, index) => (
-              <motion.div
-                key={phase.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+        {/* CTA */}
+        <section className="py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <motion.div {...fadeInUp}>
+              <h2 className="text-3xl md:text-4xl text-gray-900 mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+                Let's Build Something Exceptional
+              </h2>
+              <p className="text-gray-600 mb-8 text-lg">
+                Partner with Nexxt Group to transform your business and unlock new growth opportunities.
+              </p>
+              <a
+                href="mailto:ocfrankofficial2@gmail.com"
+                className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-10 py-4 rounded-md font-medium transition-colors"
               >
-                <div className="text-5xl mb-4 text-gray-600" style={{ fontFamily: 'var(--font-serif)' }}>
-                  {phase.step}
-                </div>
-                <h3 className="text-xl mb-3" style={{ fontFamily: 'var(--font-serif)' }}>
-                  {phase.title}
-                </h3>
-                <p className="text-gray-400">{phase.description}</p>
-              </motion.div>
-            ))}
+                Start a Conversation <ArrowRight size={18} />
+              </a>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Industries Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
-              Industries We Serve
-            </h2>
-            <div className="w-24 h-1 bg-black mx-auto"></div>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              'Financial Services',
-              'Technology',
-              'Energy & Utilities',
-              'Real Estate',
-              'Healthcare',
-              'Manufacturing',
-              'Retail & Consumer',
-              'Telecommunications',
-            ].map((industry, index) => (
-              <motion.div
-                key={industry}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-              >
-                <Card className="p-6 text-center border-2 border-gray-100 hover:border-gray-300 hover:bg-gray-50 transition-all cursor-pointer">
-                  <p className="font-medium">{industry}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 bg-white text-black">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div {...fadeInUp}>
-            <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-serif)' }}>
-              Let's Build Something Exceptional
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Partner with us to transform your business and unlock new opportunities for growth.
-            </p>
-            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white text-black hover:bg-gray-100 px-8 py-6">
-                Schedule a Consultation
-              </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6">
-                Download Brochure
-              </Button>
-            </div> */}
-          </motion.div>
-        </div>
-      </section>
       </div>
     </>
   );

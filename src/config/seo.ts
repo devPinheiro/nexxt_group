@@ -7,54 +7,53 @@ import type { SEOConfig } from '../types/seo';
 
 export const seoConfig: SEOConfig = {
   // Default meta information
-  defaultTitle: 'Nexxt Group - Global Business Accelerator',
+  defaultTitle: 'Nexxt Group — NexxtTradiixx Company Limited',
   titleTemplate: '%s | Nexxt Group',
-  defaultDescription: 'Global Business Accelerator. Trusted Excellence across Automobile, Fashion, Real Estate, and Manufacturing. Two decades of proven leadership across diverse industries worldwide.',
+  defaultDescription: 'NexxtTradiixx Company Limited — Driving innovation across Global Services, Automobiles, Fashion, Real Estate, E-Commerce, and Hospitality. Based in Lagos, Nigeria.',
   defaultKeywords: [
     'nexxt group',
-    'global business',
-    'automobile',
-    'fashion',
-    'real estate',
-    'manufacturing',
-    'business accelerator',
-    'trusted excellence',
-    'international business',
-    'corporate solutions'
+    'nexxtradiixx',
+    'global services nigeria',
+    'automobile dealership lagos',
+    'fashion lifestyle',
+    'real estate nigeria',
+    'ecommerce tradiixx',
+    'hospitality nigeria',
+    'business consulting africa',
+    'import export nigeria'
   ],
-  
+
   // Site information
   siteUrl: 'https://nexxtgroup.com',
-  siteName: 'Nexxt Group',
-  locale: 'en_US',
+  siteName: 'NexxtTradiixx Company Limited',
+  locale: 'en_NG',
   author: 'Nexxt Group',
   twitterHandle: '@nexxtgroup',
-  
+
   // Default images
   defaultImage: 'https://nexxtgroup.com/images/og-default.jpg',
-  defaultImageAlt: 'Nexxt Group - Global Business Accelerator',
-  
+  defaultImageAlt: 'Nexxt Group — NexxtTradiixx Company Limited',
+
   // Organization structured data
   organization: {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Nexxt Group',
+    name: 'NexxtTradiixx Company Limited',
     url: 'https://nexxtgroup.com',
     logo: 'https://nexxtgroup.com/images/logo.png',
-    description: 'Global Business Accelerator. Trusted Excellence across Automobile, Fashion, Real Estate, and Manufacturing.',
+    description: 'Driving innovation across Global Services, Automobiles, Fashion, Real Estate, E-Commerce, and Hospitality.',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '1234 Business Plaza',
-      addressLocality: 'New York',
-      addressRegion: 'NY',
-      postalCode: '10001',
-      addressCountry: 'US'
+      streetAddress: '8 Funso Owoyemi Street, Abule Egba',
+      addressLocality: 'Lagos',
+      addressRegion: 'Lagos State',
+      addressCountry: 'NG'
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-555-123-4567',
+      telephone: '+2347079800450',
       contactType: 'Customer Service',
-      email: 'info@nexxtgroup.com'
+      email: 'ocfrankofficial2@gmail.com'
     },
     sameAs: [
       'https://www.linkedin.com/company/nexxtgroup',
@@ -69,34 +68,34 @@ export const seoConfig: SEOConfig = {
  */
 export const pageConfigs = {
   home: {
-    title: 'Global Business Accelerator - Trusted Excellence',
-    description: 'Nexxt Group: Two decades of proven leadership across Automobile, Fashion, Real Estate, and Manufacturing. Accelerating global business with mature, trusted solutions.',
-    keywords: ['global business accelerator', 'trusted excellence', 'automobile', 'fashion', 'real estate', 'manufacturing']
+    title: 'NexxtTradiixx Company Limited — Building Africa\'s Future',
+    description: 'Nexxt Group: Six business divisions spanning Global Services, Automobiles, Fashion, Real Estate, E-Commerce (Tradiixx.com), and Hospitality. Based in Lagos, Nigeria.',
+    keywords: ['nexxtradiixx', 'nexxt group lagos', 'automobile dealership nigeria', 'real estate lagos', 'tradiixx ecommerce', 'business consulting africa']
   },
   about: {
-    title: 'About Us - The Nexxt Story',
-    description: 'Learn about Nexxt Group\'s two decades of accelerating global business across diverse industries. Our story of trusted excellence and mature business solutions.',
-    keywords: ['about nexxt group', 'company history', 'business leadership', 'global expansion']
+    title: 'About Us — Nexxt Group',
+    description: 'Meet Frank Chibuike Onyeukwu, Founder & CEO of Nexxt Group. Learn about our vision to build Africa\'s leading multinational enterprise through innovation and integrity.',
+    keywords: ['about nexxt group', 'frank onyeukwu', 'nexxtradiixx founder', 'lagos business', 'africa entrepreneurship']
   },
   subsidiaries: {
-    title: 'Our Subsidiaries - Diverse Industry Portfolio',
-    description: 'Explore Nexxt Group\'s subsidiaries: Nexxt Automobile, Nexxt Fashion, Nexxt Real Estate, and Nexxt Manufacturing. Global leaders in their respective industries.',
-    keywords: ['subsidiaries', 'automobile division', 'fashion retail', 'real estate development', 'manufacturing']
+    title: 'Business Divisions — Nexxt Group',
+    description: 'Explore Nexxt Group\'s six business divisions: Global Services, Automobiles, Fashion, Real Estate, E-Commerce, and Hospitality.',
+    keywords: ['nexxt group divisions', 'automobile', 'fashion', 'real estate', 'ecommerce', 'hospitality nigeria']
   },
   services: {
-    title: 'Global Services - Comprehensive Solutions',
-    description: 'Nexxt Group services: Automobile Dealership, Real Estate Investment, Customer Goods, and Import/Export. Comprehensive solutions for global markets.',
-    keywords: ['automobile dealership', 'real estate services', 'customer goods', 'import export', 'global services']
+    title: 'Our Services — Nexxt Group',
+    description: 'Nexxt Group services: Global Services, Automobile Dealership, Fashion & Lifestyle, Real Estate, E-Commerce (Tradiixx.com), and Hospitality across Nigeria and Africa.',
+    keywords: ['automobile dealership lagos', 'real estate nigeria', 'fashion branding', 'ecommerce nigeria', 'hospitality services', 'global services']
   },
   careers: {
-    title: 'Careers - Join Our Global Team',
-    description: 'Join Nexxt Group\'s global team. Explore career opportunities across our Automobile, Fashion, Real Estate, and Manufacturing divisions worldwide.',
-    keywords: ['careers', 'jobs', 'employment', 'global opportunities', 'join nexxt group']
+    title: 'Careers — Join Nexxt Group',
+    description: 'Explore career opportunities at Nexxt Group across our six business divisions in Lagos, Nigeria.',
+    keywords: ['careers nexxt group', 'jobs lagos nigeria', 'employment africa']
   },
   contact: {
-    title: 'Contact Us - Get In Touch',
-    description: 'Contact Nexxt Group for partnership opportunities, business inquiries, or more information about our global services and solutions.',
-    keywords: ['contact', 'business inquiries', 'partnerships', 'get in touch']
+    title: 'Contact Us — Nexxt Group',
+    description: 'Get in touch with Nexxt Group. Visit us at 8 Funso Owoyemi Street, Abule Egba, Lagos. Call +2347079800450 or email ocfrankofficial2@gmail.com.',
+    keywords: ['contact nexxt group', 'lagos nigeria', 'abule egba', 'business inquiry']
   }
 };
 
