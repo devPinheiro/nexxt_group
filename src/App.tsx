@@ -3,7 +3,6 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
 import { AboutPage } from './components/AboutPage';
-import { SubsidiariesPage } from './components/SubsidiariesPage';
 import { ServicesPage } from './components/ServicesPage';
 import { CareersPage } from './components/CareersPage';
 import { ContactPage } from './components/ContactPage';
@@ -18,8 +17,6 @@ export default function App() {
         return <HomePage onNavigate={setCurrentPage} />;
       case 'about':
         return <AboutPage />;
-      case 'subsidiaries':
-        return <SubsidiariesPage />;
       case 'services':
         return <ServicesPage />;
       case 'careers':

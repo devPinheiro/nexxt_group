@@ -6,8 +6,7 @@ import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { SimpleSEO } from './SEO/SimpleSEO';
 import { getPageConfig } from './SEO';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 
 interface ContactFormData {
   firstName: string;
@@ -19,18 +18,43 @@ interface ContactFormData {
   message: string;
 }
 
-interface Office {
-  city: string;
-  country: string;
-  address: string;
-  phone: string;
-  email: string;
-}
+const CONTACT_REASONS = [
+  'Global Services Inquiry',
+  'Automobile Dealership',
+  'Fashion & Lifestyle',
+  'Real Estate',
+  'E-Commerce',
+  'Hospitality',
+  'Partnership Opportunity',
+  'General Inquiry',
+];
+
+const CONTACT_INFO = [
+  {
+    icon: Mail,
+    label: 'Email',
+    lines: ['ocfrankofficial2@gmail.com'],
+  },
+  {
+    icon: Phone,
+    label: 'Phone',
+    lines: ['+234 707 980 0450'],
+  },
+  {
+    icon: MapPin,
+    label: 'Address',
+    lines: ['8 Funso Owoyemi Street, Abule Egba', 'Lagos State, Nigeria'],
+  },
+  {
+    icon: Clock,
+    label: 'Business Hours',
+    lines: ['Monday – Friday: 9:00 AM – 6:00 PM (WAT)'],
+  },
+];
 
 export function ContactPage() {
   const contactConfig = getPageConfig('contact');
-  
-  // Contact form state
+
   const [formData, setFormData] = useState<ContactFormData>({
     firstName: '',
     lastName: '',
@@ -38,90 +62,26 @@ export function ContactPage() {
     phone: '',
     company: '',
     reason: '',
-    message: ''
+    message: '',
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const offices: Office[] = [
-    {
-      city: 'Lagos',
-      country: 'Nigeria',
-      address: 'Victoria Island Business District, Lagos State, Nigeria',
-      phone: '+234 1 234 5678',
-      email: 'lagos@nexxtgroup.com',
-    },
-    {
-      city: 'Abuja',
-      country: 'Nigeria', 
-      address: 'Central Business District, Abuja FCT, Nigeria',
-      phone: '+234 9 876 5432',
-      email: 'abuja@nexxtgroup.com',
-    },
-    {
-      city: 'New York',
-      country: 'United States',
-      address: '1 World Trade Center, New York, NY 10007',
-      phone: '+1 (212) 555-0100',
-      email: 'newyork@nexxtgroup.com',
-    },
-    {
-      city: 'London',
-      country: 'United Kingdom',
-      address: '1 Canada Square, Canary Wharf, London E14 5AB',
-      phone: '+44 20 7123 4567',
-      email: 'london@nexxtgroup.com',
-    },
-  ];
-
-  const contactReasons = [
-    'Partnership Opportunities',
-    'Investment Information', 
-    'Automobile Division Inquiry',
-    'Fashion Division Inquiry',
-    'Real Estate Division Inquiry',
-    'Manufacturing Division Inquiry',
-    'Business Acceleration Services',
-    'Media Relations',
-    'Career Opportunities',
-    'General Inquiry'
-  ];
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
-
     try {
-      // Simulate form submission - replace with actual API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Here you would typically send the data to your backend
-      console.log('Form submitted:', formData);
-      
+      await new Promise(resolve => setTimeout(resolve, 1500));
       setSubmitStatus('success');
-      
-      // Reset form after successful submission
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        company: '',
-        reason: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Form submission error:', error);
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', company: '', reason: '', message: '' });
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -144,42 +104,52 @@ export function ContactPage() {
         type="website"
         path="/contact"
       />
-      <div className="min-h-screen pt-20">
-        {/* Hero Section */}
-        <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-800">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1703014172880-a9ad043097c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NTk0NTc5Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Modern architecture"
-              className="w-full h-full object-cover opacity-30"
+      <div className="min-h-screen">
+
+        {/* Hero */}
+        <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src="/images/hero.jpeg"
+              alt="Nexxt Group headquarters"
+              className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-black/75" />
           </div>
-          
           <div className="relative z-10 text-center px-6 max-w-4xl">
+            <motion.p
+              className="text-gray-400 text-sm tracking-widest uppercase mb-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Get In Touch
+            </motion.p>
             <motion.h1
-              className="text-5xl md:text-6xl mb-6"
+              className="text-5xl md:text-6xl text-white mb-4"
               style={{ fontFamily: 'var(--font-serif)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
             >
-              Partner With Us
+              Contact Us
             </motion.h1>
             <motion.p
               className="text-xl text-gray-300"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.25 }}
             >
-              Connect with Nexxt Group's global business acceleration team
+              Connect with the Nexxt Group team
             </motion.p>
           </div>
         </section>
 
-        {/* Contact Form Section */}
-        <section className="py-24 bg-white">
+        {/* Contact Form + Info */}
+        <section className="py-24 bg-black">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-16">
+            <div className="grid md:grid-cols-2 gap-12">
+
               {/* Form */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -187,34 +157,28 @@ export function ContactPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2
-                  className="text-3xl md:text-4xl mb-6"
-                  style={{ fontFamily: 'var(--font-serif)' }}
-                >
-                  Start the Conversation
+                <h2 className="text-3xl md:text-4xl text-white mb-3" style={{ fontFamily: 'var(--font-serif)' }}>
+                  Send Us a Message
                 </h2>
-                <p className="text-gray-600 mb-8">
-                  Ready to accelerate your business? Our team of experts is here to help you explore partnership opportunities and growth strategies.
+                <p className="text-white/500 mb-8">
+                  Fill in the form and we'll get back to you within 24 hours.
                 </p>
 
                 {submitStatus === 'success' && (
-                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <p className="text-green-800">Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+                  <div className="mb-6 p-4 bg-neutral-900 border border-neutral-700 rounded-lg">
+                    <p className="text-white/50">Thank you! Your message has been sent. We'll be in touch soon.</p>
                   </div>
                 )}
-
                 {submitStatus === 'error' && (
-                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-                    <p className="text-red-800">There was an error sending your message. Please try again or contact us directly.</p>
+                  <div className="mb-6 p-4 bg-neutral-900 border border-neutral-700 rounded-lg">
+                    <p className="text-white/50">Something went wrong. Please try again or email us directly.</p>
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="firstName" className="block mb-2 text-gray-700 font-medium">
-                        First Name *
-                      </label>
+                      <label htmlFor="firstName" className="block mb-2 text-gray-300 text-sm font-medium">First Name *</label>
                       <Input
                         id="firstName"
                         name="firstName"
@@ -223,14 +187,12 @@ export function ContactPage() {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         placeholder="John"
-                        className="border-gray-300 focus:border-black"
+                        className="bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-600 focus:border-gray-400"
                         disabled={isSubmitting}
                       />
                     </div>
                     <div>
-                      <label htmlFor="lastName" className="block mb-2 text-gray-700 font-medium">
-                        Last Name *
-                      </label>
+                      <label htmlFor="lastName" className="block mb-2 text-gray-300 text-sm font-medium">Last Name *</label>
                       <Input
                         id="lastName"
                         name="lastName"
@@ -239,16 +201,14 @@ export function ContactPage() {
                         value={formData.lastName}
                         onChange={handleInputChange}
                         placeholder="Doe"
-                        className="border-gray-300 focus:border-black"
+                        className="bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-600 focus:border-gray-400"
                         disabled={isSubmitting}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block mb-2 text-gray-700 font-medium">
-                      Email Address *
-                    </label>
+                    <label htmlFor="email" className="block mb-2 text-gray-300 text-sm font-medium">Email Address *</label>
                     <Input
                       id="email"
                       name="email"
@@ -256,91 +216,81 @@ export function ContactPage() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="john.doe@company.com"
-                      className="border-gray-300 focus:border-black"
+                      placeholder="john@company.com"
+                      className="bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-600 focus:border-gray-400"
                       disabled={isSubmitting}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block mb-2 text-gray-700 font-medium">
-                      Phone Number
-                    </label>
+                    <label htmlFor="phone" className="block mb-2 text-gray-300 text-sm font-medium">Phone Number</label>
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="+1 (555) 123-4567"
-                      className="border-gray-300 focus:border-black"
+                      placeholder="+234 800 000 0000"
+                      className="bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-600 focus:border-gray-400"
                       disabled={isSubmitting}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="company" className="block mb-2 text-gray-700 font-medium">
-                      Company/Organization
-                    </label>
+                    <label htmlFor="company" className="block mb-2 text-gray-300 text-sm font-medium">Company / Organisation</label>
                     <Input
                       id="company"
                       name="company"
                       type="text"
                       value={formData.company}
                       onChange={handleInputChange}
-                      placeholder="Your Company Name"
-                      className="border-gray-300 focus:border-black"
+                      placeholder="Your company name"
+                      className="bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-600 focus:border-gray-400"
                       disabled={isSubmitting}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="reason" className="block mb-2 text-gray-700 font-medium">
-                      Reason for Contact *
-                    </label>
-                    <select 
+                    <label htmlFor="reason" className="block mb-2 text-gray-300 text-sm font-medium">Reason for Contact *</label>
+                    <select
                       id="reason"
                       name="reason"
                       required
                       value={formData.reason}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-black focus:outline-none disabled:opacity-50"
+                      className="w-full px-4 py-2 bg-neutral-900 border border-neutral-700 rounded-md text-white focus:border-gray-400 focus:outline-none disabled:opacity-50"
                       disabled={isSubmitting}
                     >
-                      <option value="">Select a reason</option>
-                      {contactReasons.map((reason) => (
-                        <option key={reason} value={reason}>
-                          {reason}
-                        </option>
+                      <option value="" className="text-white/50">Select a reason</option>
+                      {CONTACT_REASONS.map(r => (
+                        <option key={r} value={r}>{r}</option>
                       ))}
                     </select>
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block mb-2 text-gray-700 font-medium">
-                      Message *
-                    </label>
+                    <label htmlFor="message" className="block mb-2 text-gray-300 text-sm font-medium">Message *</label>
                     <Textarea
                       id="message"
                       name="message"
                       required
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Tell us about your business goals and how we can help accelerate your growth..."
-                      rows={6}
-                      className="border-gray-300 focus:border-black resize-none"
+                      placeholder="Tell us about your needs and how we can help..."
+                      rows={5}
+                      className="bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-600 focus:border-gray-400 resize-none"
                       disabled={isSubmitting}
                     />
                   </div>
 
-                  <Button 
+                  <Button
                     type="submit"
-                    className="w-full bg-black hover:bg-gray-800 py-6 flex items-center justify-center gap-2"
+                    className="w-full bg-white hover:bg-gray-100 text-gray-900 font-medium py-6 flex items-center justify-center gap-2"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-900" />
                         Sending...
                       </>
                     ) : (
@@ -353,189 +303,74 @@ export function ContactPage() {
                 </form>
               </motion.div>
 
-              {/* Contact Information */}
+              {/* Contact Info */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2
-                  className="text-3xl md:text-4xl mb-6"
-                  style={{ fontFamily: 'var(--font-serif)' }}
-                >
-                  Connect Directly
+                <h2 className="text-3xl md:text-4xl text-white mb-3" style={{ fontFamily: 'var(--font-serif)' }}>
+                  Reach Us Directly
                 </h2>
-                <p className="text-gray-600 mb-8">
-                  Prefer to reach out directly? Our global team is available through multiple channels to assist with your business needs.
+                <p className="text-white/50 mb-10">
+                  Prefer to reach out directly? We're ready to hear from you through any of the channels below.
                 </p>
 
-                <div className="space-y-6 mb-12">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Mail className="text-white" size={20} />
+                <div className="space-y-6 mb-10">
+                  {CONTACT_INFO.map(({ icon: Icon, label, lines }) => (
+                    <div key={label} className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-neutral-900 border border-neutral-700 rounded-xl flex items-center justify-center shrink-0">
+                        <Icon className="text-white" size={20} />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-medium mb-1">{label}</h3>
+                        {lines.map(line => (
+                          <p key={line} className="text-white/50 text-sm">{line}</p>
+                        ))}
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-gray-600">info@nexxtgroup.com</p>
-                      <p className="text-gray-600">partnerships@nexxtgroup.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="text-white" size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Phone</h3>
-                      <p className="text-gray-600">+1 (212) 555-0100 (Americas)</p>
-                      <p className="text-gray-600">+44 20 7123 4567 (Europe)</p>
-                      <p className="text-gray-600">+234 1 234 5678 (Africa)</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Clock className="text-white" size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Business Hours</h3>
-                      <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p className="text-gray-600">Local time at each office</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <Card className="p-6 bg-gray-50 border-2 border-gray-100">
-                  <h3
-                    className="text-xl mb-4"
-                    style={{ fontFamily: 'var(--font-serif)' }}
+                {/* Office Card */}
+                <Card className="p-6 bg-neutral-900 border border-neutral-800">
+                  <div className="flex items-start gap-4 mb-5">
+                    <div className="w-12 h-12 bg-neutral-800 border border-neutral-700 rounded-xl flex items-center justify-center shrink-0">
+                      <MapPin className="text-white" size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl text-white" style={{ fontFamily: 'var(--font-serif)' }}>Lagos Office</h3>
+                      <p className="text-white/50 text-sm">Nigeria — Head Office</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <p className="text-white mb-0.5 font-medium text-xs uppercase tracking-wider">Address</p>
+                      <p className="text-white/50">8 Funso Owoyemi Street, Abule Egba, Lagos State, Nigeria</p>
+                    </div>
+                    <div>
+                      <p className="text-white mb-0.5 font-medium text-xs uppercase tracking-wider">Phone</p>
+                      <p className="text-white/50">+234 707 980 0450</p>
+                    </div>
+                    <div>
+                      <p className="text-white mb-0.5 font-medium text-xs uppercase tracking-wider">Email</p>
+                      <p className="text-white/50">ocfrankofficial2@gmail.com</p>
+                    </div>
+                  </div>
+                  <button
+                    className="mt-5 w-full border border-neutral-700 hover:border-gray-500 text-gray-300 hover:text-white py-2 rounded-md text-sm font-medium transition-colors"
+                    onClick={() => window.open('https://maps.google.com/maps?q=8+Funso+Owoyemi+Street+Abule+Egba+Lagos+Nigeria', '_blank')}
                   >
-                    Media & Press Inquiries
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    For media relations, press inquiries, and interview requests, please contact our communications team.
-                  </p>
-                  <Button 
-                    variant="outline" 
-                    className="border-2 hover:bg-white"
-                    onClick={() => window.location.href = 'mailto:press@nexxtgroup.com'}
-                  >
-                    Contact Media Team
-                  </Button>
+                    Get Directions
+                  </button>
                 </Card>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Office Locations */}
-        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div {...fadeInUp} className="text-center mb-16">
-              <h2
-                className="text-4xl md:text-5xl mb-4"
-                style={{ fontFamily: 'var(--font-serif)' }}
-              >
-                Global Offices
-              </h2>
-              <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Visit us at any of our global headquarters across four continents
-              </p>
-            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {offices.map((office, index) => (
-                <motion.div
-                  key={`${office.city}-${office.country}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Card className="p-8 border-2 border-gray-100 hover:border-gray-300 transition-all h-full">
-                    <div className="flex items-start gap-4 mb-6">
-                      <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                        <MapPin className="text-white" size={20} />
-                      </div>
-                      <div>
-                        <h3
-                          className="text-2xl mb-1"
-                          style={{ fontFamily: 'var(--font-serif)' }}
-                        >
-                          {office.city}
-                        </h3>
-                        <p className="text-gray-500">{office.country}</p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-sm text-gray-500 mb-1 font-medium">Address</p>
-                        <p className="text-gray-700">{office.address}</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-500 mb-1 font-medium">Phone</p>
-                        <p className="text-gray-700">{office.phone}</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-500 mb-1 font-medium">Email</p>
-                        <p className="text-gray-700">{office.email}</p>
-                      </div>
-                    </div>
-
-                    <Button
-                      variant="outline"
-                      className="w-full mt-6 border-2 hover:bg-gray-50"
-                      onClick={() => {
-                        const encodedAddress = encodeURIComponent(office.address);
-                        window.open(`https://maps.google.com/maps?q=${encodedAddress}`, '_blank');
-                      }}
-                    >
-                      Get Directions
-                    </Button>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Global Presence Section */}
-        <section className="py-24 bg-black text-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div {...fadeInUp} className="text-center mb-12">
-              <h2
-                className="text-4xl md:text-5xl mb-4"
-                style={{ fontFamily: 'var(--font-serif)' }}
-              >
-                Global Business Acceleration
-              </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                Operating across 50+ countries with local expertise and global reach. 
-                Accelerating business growth through mature, trusted partnerships.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="aspect-video bg-gray-900 rounded-lg overflow-hidden relative"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900"></div>
-              <div className="relative z-10 w-full h-full flex items-center justify-center text-gray-400">
-                <div className="text-center">
-                  <MapPin size={48} className="mx-auto mb-4" />
-                  <p className="text-lg">Interactive Global Map</p>
-                  <p className="text-sm mt-2">Showcasing our worldwide presence</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
       </div>
     </>
   );
