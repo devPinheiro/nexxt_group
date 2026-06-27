@@ -9,7 +9,7 @@ export const seoConfig: SEOConfig = {
   // Default meta information
   defaultTitle: 'Nexttradiixx Company Limited — Building Africa\'s Future',
   titleTemplate: '%s | Nexttradiixx',
-  defaultDescription: 'Nexttradiixx Company Limited — Driving innovation across Global Services, Automobiles, Fashion, Real Estate, E-Commerce, and Hospitality. Based in Lagos, Nigeria.',
+  defaultDescription: 'Nexttradiixx Company Limited — Driving innovation across Global Services, Automobiles, Fashion, Real Estate, E-Commerce, Hospitality, and Farming & Agriculture. Based in Lagos, Nigeria.',
   defaultKeywords: [
     'nexttradiixx',
     'nexttradiixx company limited',
@@ -20,6 +20,7 @@ export const seoConfig: SEOConfig = {
     'real estate nigeria',
     'ecommerce tradiixx',
     'hospitality nigeria',
+    'farming agriculture nigeria',
     'business consulting africa',
     'import export nigeria',
     'frank onyeukwu'
@@ -43,7 +44,7 @@ export const seoConfig: SEOConfig = {
     name: 'Nexttradiixx Company Limited',
     url: 'https://nexttradiixx.ng',
     logo: 'https://nexttradiixx.ng/images/logo.png',
-    description: 'African business conglomerate driving innovation across Global Services, Automobiles, Fashion, Real Estate, E-Commerce, and Hospitality.',
+    description: 'African business conglomerate driving innovation across Global Services, Automobiles, Fashion, Real Estate, E-Commerce, Hospitality, and Farming & Agriculture.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '8 Funso Owoyemi Street, Abule Egba',
@@ -71,7 +72,7 @@ export const seoConfig: SEOConfig = {
 export const pageConfigs = {
   home: {
     title: 'Nexttradiixx Company Limited — Building Africa\'s Future',
-    description: 'Nexttradiixx Company Limited: Six business divisions spanning Global Services, Automobiles, Fashion, Real Estate, E-Commerce (Tradiixx.com), and Hospitality. Based in Lagos, Nigeria.',
+    description: 'Nexttradiixx Company Limited: Seven business divisions spanning Global Services, Automobiles, Fashion, Real Estate, E-Commerce (Tradiixx.com), Hospitality, and Farming & Agriculture. Based in Lagos, Nigeria.',
     keywords: ['nexttradiixx', 'nexttradiixx company limited', 'african conglomerate lagos', 'automobile dealership nigeria', 'real estate lagos', 'tradiixx ecommerce', 'business consulting africa']
   },
   about: {
@@ -81,17 +82,17 @@ export const pageConfigs = {
   },
   subsidiaries: {
     title: 'Business Divisions — Nexttradiixx Company Limited',
-    description: 'Explore Nexttradiixx\'s six business divisions: Global Services, Automobiles, Fashion, Real Estate, E-Commerce, and Hospitality.',
-    keywords: ['nexttradiixx divisions', 'automobile', 'fashion', 'real estate', 'ecommerce', 'hospitality nigeria']
+    description: 'Explore Nexttradiixx\'s seven business divisions: Global Services, Automobiles, Fashion, Real Estate, E-Commerce, Hospitality, and Farming & Agriculture.',
+    keywords: ['nexttradiixx divisions', 'automobile', 'fashion', 'real estate', 'ecommerce', 'hospitality nigeria', 'farming agriculture nigeria']
   },
   services: {
     title: 'Our Services — Nexttradiixx Company Limited',
-    description: 'Nexttradiixx services: Global Services, Automobile Dealership, Fashion & Lifestyle, Real Estate, E-Commerce (Tradiixx.com), and Hospitality across Nigeria and Africa.',
-    keywords: ['automobile dealership lagos', 'real estate nigeria', 'fashion branding', 'ecommerce nigeria', 'hospitality services', 'global services africa']
+    description: 'Nexttradiixx services: Global Services, Automobile Dealership, Fashion & Lifestyle, Real Estate, E-Commerce (Tradiixx.com), Hospitality, and Farming & Agriculture across Nigeria and Africa.',
+    keywords: ['automobile dealership lagos', 'real estate nigeria', 'fashion branding', 'ecommerce nigeria', 'hospitality services', 'global services africa', 'farming agriculture nigeria']
   },
   careers: {
     title: 'Careers at Nexttradiixx — Join Our Team',
-    description: 'Explore career opportunities at Nexttradiixx Company Limited across our six business divisions in Lagos, Nigeria.',
+    description: 'Explore career opportunities at Nexttradiixx Company Limited across our seven business divisions in Lagos, Nigeria.',
     keywords: ['careers nexttradiixx', 'jobs lagos nigeria', 'employment africa', 'nexttradiixx jobs']
   },
   contact: {

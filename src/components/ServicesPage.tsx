@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Globe, Car, Shirt, Home, ShoppingCart, UtensilsCrossed, ArrowRight } from 'lucide-react';
+import { Globe, Car, Shirt, Home, ShoppingCart, UtensilsCrossed, Sprout, ArrowRight } from 'lucide-react';
 import { Card } from './ui/card';
 import { SimpleSEO } from './SEO/SimpleSEO';
 import { getPageConfig } from './SEO';
@@ -45,6 +45,13 @@ const DIVISIONS = [
     title: 'Hospitality',
     description: 'Hotels, restaurants, events, and tourism services that deliver memorable experiences with lasting impact.',
     features: ['Hotels and accommodation', 'Restaurants', 'Event management', 'Tourism and leisure services'],
+    link: null,
+  },
+  {
+    icon: Sprout,
+    title: 'Farming & Agriculture',
+    description: 'Sustainable farming operations and agribusiness solutions driving food security and rural economic growth across Nigeria.',
+    features: ['Crop production', 'Livestock farming', 'Agro-processing', 'Farm management', 'Agricultural supply chain'],
     link: null,
   },
 ];
@@ -111,7 +118,7 @@ export function ServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
             >
-              Six specialised divisions delivering comprehensive solutions across key sectors
+              Seven specialised divisions delivering comprehensive solutions across key sectors
             </motion.p>
           </div>
         </section>

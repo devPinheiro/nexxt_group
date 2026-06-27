@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Globe, Car, Shirt, Home, ShoppingCart, UtensilsCrossed, ArrowRight, Lightbulb, Shield, Zap } from 'lucide-react';
+import { Globe, Car, Shirt, Home, ShoppingCart, UtensilsCrossed, Sprout, ArrowRight, Lightbulb, Shield, Zap } from 'lucide-react';
 import { Button } from './ui/button';
 import { SimpleSEO } from './SEO/SimpleSEO';
 import { getPageConfig } from './SEO';
@@ -43,6 +43,12 @@ const DIVISIONS = [
     icon: UtensilsCrossed,
     title: 'Hospitality',
     description: 'Hotels, restaurants, events, and tourism services delivered with excellence.',
+    link: null,
+  },
+  {
+    icon: Sprout,
+    title: 'Farming & Agriculture',
+    description: 'Sustainable farming operations and agribusiness driving food security across Nigeria.',
     link: null,
   },
 ];
@@ -102,7 +108,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
             >
-              Global services, automobiles, fashion, real estate, e-commerce &amp; hospitality — all under one roof.
+              Global services, automobiles, fashion, real estate, e-commerce, hospitality &amp; agriculture — all under one roof.
             </motion.p>
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -155,10 +161,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 className="text-5xl md:text-6xl font-bold text-black mb-6 leading-tight"
                 style={{ fontFamily: 'var(--font-serif)' }}
               >
-                Six divisions built for Africa's future
+                Seven divisions built for Africa's future
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                A diversified portfolio spanning global services, automobiles, fashion, real estate, e-commerce, and hospitality — all under one roof.
+                A diversified portfolio spanning global services, automobiles, fashion, real estate, e-commerce, hospitality, and agriculture — all under one roof.
               </p>
             </motion.div>
 
@@ -201,7 +207,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 Ready to Grow With Us?
               </h2>
               <p className="text-black mb-8  md:text-2xl leading-relaxed">
-                Partner with Nexttradiixx and access a network of expertise across six powerful business divisions.
+                Partner with Nexttradiixx and access a network of expertise across seven powerful business divisions.
               </p>
               <Button
               size="sm"

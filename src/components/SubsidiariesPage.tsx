@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Building2, DollarSign, Zap, Home, Filter } from 'lucide-react';
+import { Building2, DollarSign, Zap, Home, Filter, Sprout } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { useState } from 'react';
@@ -71,9 +71,19 @@ export function SubsidiariesPage() {
       employees: '25,000+',
       regions: ['Asia Pacific', 'Middle East'],
     },
+    {
+      name: 'Nexttradiixx Agriculture',
+      logo: Sprout,
+      industry: 'Agriculture',
+      description: 'Sustainable farming operations and agribusiness solutions driving food security and rural economic growth across Nigeria.',
+      established: '2020',
+      headquarters: 'Lagos, Nigeria',
+      employees: '2,000+',
+      regions: ['West Africa'],
+    },
   ];
 
-  const filters = ['all', 'Finance', 'Technology', 'Energy', 'Real Estate', 'Manufacturing', 'Healthcare'];
+  const filters = ['all', 'Finance', 'Technology', 'Energy', 'Real Estate', 'Manufacturing', 'Healthcare', 'Agriculture'];
 
   const filteredSubsidiaries = selectedFilter === 'all' 
     ? subsidiaries 
