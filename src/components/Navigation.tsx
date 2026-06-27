@@ -35,7 +35,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             className="flex items-center gap-1 cursor-pointer"
             whileHover={{ scale: 1.02 }}
           >
-            <img src="/images/logo-white.svg" className="w-24" alt="Nexxt Group logo" />
+            <img src="/images/logo-white.svg" className="w-16" alt="Nexttradiixx logo" />
           </motion.div>
 
           {/* Desktop Navigation */}

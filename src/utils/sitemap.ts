@@ -39,7 +39,7 @@ ${urlEntries}
 }
 
 /**
- * Static routes configuration for Nexxt Group
+ * Static routes configuration for Nexttradiixx
  */
 export const staticRoutes: SitemapURL[] = [
   {
@@ -81,11 +81,11 @@ export const staticRoutes: SitemapURL[] = [
 ];
 
 /**
- * Generate sitemap for Nexxt Group
+ * Generate sitemap for Nexttradiixx
  */
 export function generateNexxtGroupSitemap(): string {
   const config: SitemapConfig = {
-    baseUrl: 'https://nexxtgroup.com',
+    baseUrl: 'https://nexttradiixx.ng',
     routes: staticRoutes
   };
   
@@ -112,7 +112,7 @@ export async function saveSitemap(content: string, filename = 'sitemap.xml'): Pr
  * Robots.txt content generation
  */
 export function generateRobotsTxt(sitemapUrl: string): string {
-  return `# Robots.txt for Nexxt Group
+  return `# Robots.txt for Nexttradiixx
 # ${sitemapUrl.replace('/sitemap.xml', '/robots.txt')}
 
 User-agent: *
