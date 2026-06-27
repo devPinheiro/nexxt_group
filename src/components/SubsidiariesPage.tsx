@@ -12,7 +12,7 @@ export function SubsidiariesPage() {
 
   const subsidiaries = [
     {
-      name: 'Nexxt Automobile',
+      name: 'Nexttradiixx Automobile',
       logo: Building2,
       industry: 'Automobile',
       description: 'Premium automotive solutions and vehicle distribution services with global dealership network.',
@@ -22,7 +22,7 @@ export function SubsidiariesPage() {
       regions: ['North America', 'Europe', 'Asia'],
     },
     {
-      name: 'Nexxt Fashion',
+      name: 'Nexttradiixx Fashion',
       logo: DollarSign,
       industry: 'Fashion',
       description: 'High-end fashion retail and lifestyle brands with premium boutiques worldwide.',
@@ -32,7 +32,7 @@ export function SubsidiariesPage() {
       regions: ['Global'],
     },
     {
-      name: 'Nexxt Manufacturing',
+      name: 'Nexttradiixx Manufacturing',
       logo: Zap,
       industry: 'Manufacturing',
       description: 'Advanced manufacturing and industrial production facilities serving global markets.',
@@ -42,7 +42,7 @@ export function SubsidiariesPage() {
       regions: ['Asia Pacific', 'Europe', 'Americas'],
     },
     {
-      name: 'Nexxt Real Estate',
+      name: 'Nexttradiixx Real Estate',
       logo: Home,
       industry: 'Real Estate',
       description: 'Commercial and residential property development and investment with global portfolio.',

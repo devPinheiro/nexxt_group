@@ -53,7 +53,7 @@ export function AboutPage() {
           <div className="absolute inset-0">
             <img
               src="/images/hero.jpeg"
-              alt="Nexxt Group headquarters"
+              alt="Nexttradiixx Company Limited headquarters"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/75" />
@@ -67,10 +67,10 @@ export function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              About Nexxt Group
+              About Nexttradiixx
             </motion.h1>
             <motion.p
-              className="text-xl text-gray-300"
+              className="text-xl text-white/50"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
@@ -89,7 +89,7 @@ export function AboutPage() {
                 Building Businesses That Create Lasting Value
               </h2>
               <p className="text-lg text-black leading-relaxed mb-5">
-                Nexxt Group is a forward-thinking company dedicated to driving innovation across technology, renewable energy, procurement, digital solutions, and business development. With a vision to deliver practical, technology-driven solutions, we help businesses improve efficiency, accelerate growth, and adapt to an evolving global economy.
+                Nexttradiixx is a forward-thinking company dedicated to driving innovation across technology, renewable energy, procurement, digital solutions, and business development. With a vision to deliver practical, technology-driven solutions, we help businesses improve efficiency, accelerate growth, and adapt to an evolving global economy.
               </p>
               <p className="text-base text-black leading-relaxed">
                 We are committed to empowering businesses, supporting entrepreneurship, and contributing to Africa's economic transformation through innovation, digital technology, and strategic investments.
@@ -101,12 +101,12 @@ export function AboutPage() {
         <section className="lg:py-40 py-12 bg-neutral-950">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="text-center mb-16">
-              <p className="text-gray-400 text-sm tracking-widest uppercase mb-3">What We Stand For</p>
+              <p className="text-white/50 text-sm tracking-widest uppercase mb-3">What We Stand For</p>
               <h2 className="text-4xl md:text-5xl text-white mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
                 Our Values
               </h2>
               <div className="w-20 h-0.5 bg-neutral-600 mx-auto mb-5" />
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-white/50 max-w-2xl mx-auto">
                 The principles that guide every decision we make and every partnership we form.
               </p>
             </motion.div>
@@ -129,7 +129,7 @@ export function AboutPage() {
                         <h3 className="text-xl text-white mb-2" style={{ fontFamily: 'var(--font-serif)' }}>
                           {value.title}
                         </h3>
-                        <p className="text-gray-400">{value.description}</p>
+                        <p className="text-white/50">{value.description}</p>
                       </div>
                     </div>
                   </Card>
@@ -147,7 +147,7 @@ export function AboutPage() {
                 Our Vision for Africa
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                To establish Nexxt Group as one of Africa's leading multinational enterprises — recognised for excellence, innovation, and positive impact on communities and economies across the continent.
+                To establish Nexttradiixx as one of Africa's leading multinational enterprises — recognised for excellence, innovation, and positive impact on communities and economies across the continent.
               </p>
             </motion.div>
           </div>
@@ -157,7 +157,7 @@ export function AboutPage() {
         <section className="lg:py-40 py-12 bg-black">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="text-center mb-16">
-              <p className="text-gray-400 text-sm tracking-widest uppercase mb-3">Leadership</p>
+              <p className="text-white/50 text-sm tracking-widest uppercase mb-3">Leadership</p>
               <h2 className="text-4xl md:text-5xl text-white mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
                 Meet Our Founder & CEO
               </h2>
@@ -177,7 +177,7 @@ export function AboutPage() {
                   <div className="absolute -inset-1.5 rounded-2xl bg-white/5 blur-sm" />
                   <img
                     src="/images/ceo-frank.jpeg"
-                    alt="Frank Chibuike Onyeukwu — Founder & CEO, Nexxt Group"
+                    alt="Frank Chibuike Onyeukwu — Founder & CEO, Nexttradiixx"
                     className="relative w-full max-w-sm md:max-w-md rounded-2xl object-cover border border-neutral-700"
                     style={{ aspectRatio: '3/4', objectPosition: 'top' }}
                   />
@@ -194,14 +194,14 @@ export function AboutPage() {
                 <h3 className="text-3xl text-white mb-1" style={{ fontFamily: 'var(--font-serif)' }}>
                   Frank Chibuike Onyeukwu
                 </h3>
-                <p className="text-gray-400 font-medium mb-6">Founder & Chief Executive Officer — Nexxt Group</p>
+                <p className="text-white/50 font-medium mb-6">Founder & Chief Executive Officer — Nexttradiixx</p>
 
-                <div className="space-y-4 text-gray-300 leading-relaxed text-[0.95rem]">
+                <div className="space-y-4 text-white/50 leading-relaxed text-[0.95rem]">
                   <p>
-                    Frank Chibuike Onyeukwu is an accomplished entrepreneur, business strategist, and the Founder and Chief Executive Officer (CEO) of <strong className="text-white">Nexxt Group</strong>, a forward-thinking company dedicated to driving innovation across technology, renewable energy, procurement, digital solutions, and business development.
+                    Frank Chibuike Onyeukwu is an accomplished entrepreneur, business strategist, and the Founder and Chief Executive Officer (CEO) of <strong className="text-white">Nexttradiixx</strong>, a forward-thinking company dedicated to driving innovation across technology, renewable energy, procurement, digital solutions, and business development.
                   </p>
                   <p>
-                    With a vision to build businesses that create lasting value, Frank has positioned Nexxt Group as an organisation focused on delivering practical, technology-driven solutions that help businesses improve efficiency, accelerate growth, and adapt to an evolving global economy.
+                    With a vision to build businesses that create lasting value, Frank has positioned Nexttradiixx as an organisation focused on delivering practical, technology-driven solutions that help businesses improve efficiency, accelerate growth, and adapt to an evolving global economy.
                   </p>
                   <p>
                     Frank holds a degree in <strong className="text-white">Theatre Arts and Business Management</strong> — a discipline that strengthened his leadership, communication, and creative thinking abilities. Recognising the growing importance of data in business, he furthered his education by studying <strong className="text-white">Data Analysis</strong>, gaining valuable expertise in business intelligence, data interpretation, and strategic decision-making.
@@ -210,7 +210,7 @@ export function AboutPage() {
                     Known for his innovative mindset and commitment to excellence, Frank combines creativity with analytical thinking to identify new opportunities and develop sustainable business solutions. His leadership philosophy is centred on integrity, innovation, collaboration, and continuous improvement.
                   </p>
                   <p>
-                    As the driving force behind Nexxt Group, Frank Chibuike Onyeukwu is committed to empowering businesses, supporting entrepreneurship, and contributing to Africa's economic transformation through innovation, digital technology, and strategic investments. His long-term vision is to establish Nexxt Group as one of Africa's leading multinational enterprises, recognised for excellence, innovation, and positive impact.
+                    As the driving force behind Nexttradiixx, Frank Chibuike Onyeukwu is committed to empowering businesses, supporting entrepreneurship, and contributing to Africa's economic transformation through innovation, digital technology, and strategic investments. His long-term vision is to establish Nexttradiixx as one of Africa's leading multinational enterprises, recognised for excellence, innovation, and positive impact.
                   </p>
                 </div>
               </motion.div>

@@ -79,7 +79,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="absolute inset-0">
             <img
               src="/images/hero.jpeg"
-              alt="Nexxt Group headquarters"
+              alt="Nexttradiixx Company Limited headquarters"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/70" />
@@ -97,7 +97,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Building Africa's Future,<br />One Venture at a Time
             </motion.h1>
             <motion.p
-              className="text-lg md:text-2xl mb-10 text-gray-300 max-w-2xl mx-auto"
+              className="text-lg md:text-2xl mb-10 text-white/50 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
@@ -116,10 +116,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </section>
 
         {/* Why Nexxt Strip */}
-        <section className="lg:py-32 py-12 bg-white" id="why-nexxt">
+        <section className="lg:py-32 py-12 bg-white" id="why-nexttradiixx">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16" style={{ fontFamily: 'var(--font-serif)' }}>
-              Why Nexxt?
+              Why Nexttradiixx?
             </h2>
             <div className="flex flex-col lg:flex-row justify-between gap-10">
               {PILLARS.map((pillar, index) => (
@@ -201,7 +201,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 Ready to Grow With Us?
               </h2>
               <p className="text-black mb-8  md:text-2xl leading-relaxed">
-                Partner with Nexxt Group and access a network of expertise across six powerful business divisions.
+                Partner with Nexttradiixx and access a network of expertise across six powerful business divisions.
               </p>
               <Button
               size="sm"

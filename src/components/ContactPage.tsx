@@ -33,7 +33,7 @@ const CONTACT_INFO = [
   {
     icon: Mail,
     label: 'Email',
-    lines: ['ocfrankofficial2@gmail.com'],
+    lines: ['NexxtGroup12@gmail.com'],
   },
   {
     icon: Phone,
@@ -111,14 +111,14 @@ export function ContactPage() {
           <div className="absolute inset-0">
             <img
               src="/images/hero.jpeg"
-              alt="Nexxt Group headquarters"
+              alt="Nexttradiixx Company Limited headquarters"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/75" />
           </div>
           <div className="relative z-10 text-center px-6 max-w-4xl">
             <motion.p
-              className="text-gray-400 text-sm tracking-widest uppercase mb-3"
+              className="text-white/50 text-sm tracking-widest uppercase mb-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -135,12 +135,12 @@ export function ContactPage() {
               Contact Us
             </motion.h1>
             <motion.p
-              className="text-xl text-gray-300"
+              className="text-xl text-white/50"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
             >
-              Connect with the Nexxt Group team
+              Connect with the Nexttradiixx team
             </motion.p>
           </div>
         </section>
@@ -178,7 +178,7 @@ export function ContactPage() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="firstName" className="block mb-2 text-gray-300 text-sm font-medium">First Name *</label>
+                      <label htmlFor="firstName" className="block mb-2 text-white/50 text-sm font-medium">First Name *</label>
                       <Input
                         id="firstName"
                         name="firstName"
@@ -192,7 +192,7 @@ export function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="lastName" className="block mb-2 text-gray-300 text-sm font-medium">Last Name *</label>
+                      <label htmlFor="lastName" className="block mb-2 text-white/50 text-sm font-medium">Last Name *</label>
                       <Input
                         id="lastName"
                         name="lastName"
@@ -208,7 +208,7 @@ export function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block mb-2 text-gray-300 text-sm font-medium">Email Address *</label>
+                    <label htmlFor="email" className="block mb-2 text-white/50 text-sm font-medium">Email Address *</label>
                     <Input
                       id="email"
                       name="email"
@@ -223,7 +223,7 @@ export function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block mb-2 text-gray-300 text-sm font-medium">Phone Number</label>
+                    <label htmlFor="phone" className="block mb-2 text-white/50 text-sm font-medium">Phone Number</label>
                     <Input
                       id="phone"
                       name="phone"
@@ -237,7 +237,7 @@ export function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="company" className="block mb-2 text-gray-300 text-sm font-medium">Company / Organisation</label>
+                    <label htmlFor="company" className="block mb-2 text-white/50 text-sm font-medium">Company / Organisation</label>
                     <Input
                       id="company"
                       name="company"
@@ -251,7 +251,7 @@ export function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="reason" className="block mb-2 text-gray-300 text-sm font-medium">Reason for Contact *</label>
+                    <label htmlFor="reason" className="block mb-2 text-white/50 text-sm font-medium">Reason for Contact *</label>
                     <select
                       id="reason"
                       name="reason"
@@ -269,7 +269,7 @@ export function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block mb-2 text-gray-300 text-sm font-medium">Message *</label>
+                    <label htmlFor="message" className="block mb-2 text-white/50 text-sm font-medium">Message *</label>
                     <Textarea
                       id="message"
                       name="message"
@@ -355,11 +355,11 @@ export function ContactPage() {
                     </div>
                     <div>
                       <p className="text-white mb-0.5 font-medium text-xs uppercase tracking-wider">Email</p>
-                      <p className="text-white/50">ocfrankofficial2@gmail.com</p>
+                      <p className="text-white/50">NexxtGroup12@gmail.com</p>
                     </div>
                   </div>
                   <button
-                    className="mt-5 w-full border border-neutral-700 hover:border-gray-500 text-gray-300 hover:text-white py-2 rounded-md text-sm font-medium transition-colors"
+                    className="mt-5 w-full border border-neutral-700 hover:border-gray-500 text-white/50 hover:text-white py-2 rounded-md text-sm font-medium transition-colors"
                     onClick={() => window.open('https://maps.google.com/maps?q=8+Funso+Owoyemi+Street+Abule+Egba+Lagos+Nigeria', '_blank')}
                   >
                     Get Directions

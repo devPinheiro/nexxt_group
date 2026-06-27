@@ -82,14 +82,14 @@ export function ServicesPage() {
           <div className="absolute inset-0">
             <img
               src="/images/hero.jpeg"
-              alt="Nexxt Group"
+              alt="Nexttradiixx Company Limited"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/75" />
           </div>
           <div className="relative z-10 text-center px-6 max-w-4xl">
             <motion.p
-              className="text-gray-400 text-sm tracking-widest uppercase mb-3"
+              className="text-white/50 text-sm tracking-widest uppercase mb-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -106,7 +106,7 @@ export function ServicesPage() {
               Our Services
             </motion.h1>
             <motion.p
-              className="text-xl text-gray-300"
+              className="text-xl text-white/50"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
@@ -148,14 +148,14 @@ export function ServicesPage() {
                         <h3 className="text-2xl text-white mb-1" style={{ fontFamily: 'var(--font-serif)' }}>
                           {division.title}
                         </h3>
-                        <p className="text-gray-400 text-sm">{division.description}</p>
+                        <p className="text-white/50 text-sm">{division.description}</p>
                       </div>
                     </div>
 
                     <div className="pt-5 border-t border-neutral-800 mt-auto">
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4">
                         {division.features.map((feature) => (
-                          <li key={feature} className="flex items-center gap-2 text-gray-400 text-sm">
+                          <li key={feature} className="flex items-center gap-2 text-white/50 text-sm">
                             <div className="w-1 h-1 bg-gray-500 rounded-full shrink-0" />
                             {feature}
                           </li>
@@ -184,11 +184,11 @@ export function ServicesPage() {
         <section className="py-24 bg-neutral-950">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="text-center mb-16">
-              <p className="text-gray-400 text-sm tracking-widest uppercase mb-3">How We Work</p>
+              <p className="text-white/50 text-sm tracking-widest uppercase mb-3">How We Work</p>
               <h2 className="text-4xl md:text-5xl text-white mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
                 Our Approach
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-white/50 max-w-2xl mx-auto">
                 A proven methodology built on collaboration, insight, and measurable results.
               </p>
             </motion.div>
@@ -209,7 +209,7 @@ export function ServicesPage() {
                   <h3 className="text-xl text-white mb-3" style={{ fontFamily: 'var(--font-serif)' }}>
                     {phase.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">{phase.description}</p>
+                  <p className="text-white/50 text-sm">{phase.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -224,10 +224,10 @@ export function ServicesPage() {
                 Let's Build Something Exceptional
               </h2>
               <p className="text-gray-600 mb-8 text-lg">
-                Partner with Nexxt Group to transform your business and unlock new growth opportunities.
+                Partner with Nexttradiixx to transform your business and unlock new growth opportunities.
               </p>
               <a
-                href="mailto:ocfrankofficial2@gmail.com"
+                href="mailto:NexxtGroup12@gmail.com"
                 className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-10 py-4 rounded-md font-medium transition-colors"
               >
                 Start a Conversation <ArrowRight size={18} />

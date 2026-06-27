@@ -67,7 +67,7 @@ export function setupLazyLoading() {
 export function getOptimizedImageUrl(src: string, width?: number, quality = 80): string {
   // This would integrate with your image optimization service
   // Example with a generic CDN
-  const baseUrl = src.startsWith('http') ? src : `https://nexxtgroup.ng${src}`;
+  const baseUrl = src.startsWith('http') ? src : `https://nexttradiixx.ng${src}`;
   const params = new URLSearchParams();
   
   if (width) params.set('w', width.toString());
